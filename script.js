@@ -3374,19 +3374,18 @@ function getMissionData() {
     return {
         daily: [
             { id: 'd_minigames', desc: 'Acierta 5 veces en cualquier minijuego', progress: daily.minigames, target: 5, reward: 100 },
-            { id: 'd_packs', desc: 'Abre 2 sobres hoy en la tienda', progress: daily.packs, target: 2, reward: 50 },
+            { id: 'd_packs', desc: 'Abre 2 sobres hoy en la tienda', progress: daily.packs, target: 2, reward: 25 },
             { id: 'd_tourneys', desc: 'Juega 1 torneo de Copa F10', progress: daily.tournaments, target: 1, reward: 75 },
-            { id: 'd_rosco', desc: 'Juega una partida de El Rosco', progress: daily.rosco, target: 1, reward: 120 }
+            { id: 'd_rosco', desc: 'Juega una partida de El Rosco', progress: daily.rosco, target: 1, reward: 100 }
         ],
         achievements: [
             { id: 'a_bronce', desc: 'Coleccionista: Completa el tier BRONCE', progress: bronceCount, target: tierLists.bronce.length, reward: 500 },
             { id: 'a_plata', desc: 'Coleccionista: Completa el tier PLATA', progress: plataCount, target: tierLists.plata.length, reward: 1000 },
             { id: 'a_oro', desc: 'Coleccionista: Completa el tier ORO', progress: oroCount, target: tierLists.oro.length, reward: 2500 },
             { id: 'a_diamante', desc: 'Coleccionista: Completa el tier DIAMANTE', progress: diamanteCount, target: tierLists.diamante.length, reward: 5000 },
-            { id: 'a_tourneys', desc: 'Campeón: Gana 10 Torneos', progress: tourneysWon, target: 10, reward: 1000 },
-            { id: 'a_hangman', desc: 'Especialista: Racha de 5 en Ahorcado', progress: getRecord('hangman'), target: 5, reward: 300 },
-            { id: 'a_hl', desc: 'Ojeador: Racha de 10 en Higher/Lower', progress: getRecord('hl'), target: 10, reward: 400 },
-            { id: 'a_top10', desc: 'Analista: Completa un Top 10 perfecto', progress: getRecord('top10'), target: 1, reward: 600 }
+            { id: 'a_tourneys', desc: 'Campeón: Gana 75 Torneos', progress: tourneysWon, target: 10, reward: 10000 },
+            { id: 'a_hangman', desc: 'Especialista: Racha de 100 en Ahorcado', progress: getRecord('hangman'), target: 100, reward: 10000 },
+            { id: 'a_hl', desc: 'Ojeador: Racha de 100 en Higher/Lower', progress: getRecord('hl'), target: 100, reward: 100000 }
         ]
     };
 }
