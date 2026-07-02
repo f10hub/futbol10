@@ -2490,8 +2490,8 @@ function buySpecificPlayer() {
         return;
     }
     
-    if (getCoins() < 750) {
-        mostrarMensajePro("⚠️ SIN FONDOS", "Necesitas 750 FutCoins para comprar a la carta.");
+    if (getCoins() < 1000) {
+        mostrarMensajePro("⚠️ SIN FONDOS", "Necesitas 1000 FutCoins para comprar la carta.");
         return;
     }
     
@@ -2501,7 +2501,7 @@ function buySpecificPlayer() {
         return;
     }
     
-    addCoins(-750);
+    addCoins(-1000);
     data.unlocked.push(name);
     saveAlbumData(data);
     
