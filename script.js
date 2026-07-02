@@ -2242,7 +2242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupAutocomplete('top10Input', 'top10-suggestions');
     setupAutocomplete('marketBuyInput', 'market-buy-suggestions');
     setupAutocomplete('upgradeInput', 'upgrade-suggestions');
-    checkDailyMissions();
+    ;
 
     const solveBtn = document.getElementById('solveButton');
     if(solveBtn) solveBtn.onclick = solveFullWord;
@@ -3458,4 +3458,45 @@ function checkDailyMissions() {
         if(hasReady) dot.classList.remove('hidden'); // Solo brilla si tienes algo que reclamar
         else dot.classList.add('hidden');
     }
+}
+// ==========================================
+// FUNCIONES DEL MODAL DE MISIONES
+// ==========================================
+
+// Abrir el modal
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if(modal) {
+        modal.classList.remove('hidden');
+        
+        if(modalId === 'missions-modal') {
+            showMissionTab('daily'); // Carga los diarios por defecto
+            
+            // Ocultamos la notificación de punto rojo
+            const dot = document.getElementById('mission-notification');
+            if(dot) dot.classList.add('hidden');
+            localStorage.setItem('f10_missions_date', getSpanishDateString());
+        }
+    }
+}
+
+// Cerrar el modal
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if(modal) modal.classList.add('hidden');
+}
+
+// Cambiar entre pestañas
+function showMissionTab(type) {
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+        // Marcamos la pestaña correcta según el texto
+        if((type === 'daily' && btn.innerText === 'DIARIAS') || 
+           (type === 'achievements' && btn.innerText === 'LOGROS')) {
+            btn.classList.add('active');
+        }
+    });
+    // Pintamos las misiones
+    renderMissions(type);
 }
