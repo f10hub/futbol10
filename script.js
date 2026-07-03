@@ -803,14 +803,14 @@ const top10DB = [
         items: [
             { rank: 1, name: "NEYMAR JUNIOR", flag: "brasil", stat: "222 M€", revealed: false },
             { rank: 2, name: "KYLIAN MBAPPE", flag: "francia", stat: "180 M€", revealed: false },
-            { rank: 3, name: "OUSMANE DEMBELE", flag: "francia", stat: "135 M€", revealed: false },
-            { rank: 4, name: "PHILIPPE COUTINHO", flag: "brasil", stat: "135 M€", revealed: false },
-            { rank: 5, name: "MOISES CAICEDO", flag: "ecuador", stat: "133 M€", revealed: false },
-            { rank: 6, name: "JOAO FELIX", flag: "portugal", stat: "126 M€", revealed: false },
-            { rank: 7, name: "DECLAN RICE", flag: "inglaterra", stat: "122 M€", revealed: false },
-            { rank: 8, name: "ENZO FERNANDEZ", flag: "argentina", stat: "121 M€", revealed: false },
-            { rank: 9, name: "ANTOINE GRIEZMANN", flag: "francia", stat: "120 M€", revealed: false },
-            { rank: 10, name: "JACK GREALISH", flag: "inglaterra", stat: "117 M€", revealed: false },
+            { rank: 3, name: "OUSMANE DEMBELE", flag: "francia", stat: "148 M€", revealed: false },
+            { rank: 4, name: "ALEXANDER ISAK", flag: "suecia", stat: "145 M€", revealed: false },
+            { rank: 5, name: "ELLIOT ANDERSON", flag: "inglaterra", stat: "135 M€", revealed: false },
+            { rank: 6, name: "PHILIPPE COUTINHO", flag: "brasil", stat: "135 M€", revealed: false },
+            { rank: 7, name: "JOAO FELIX", flag: "portugal", stat: "127 M€", revealed: false },
+            { rank: 8, name: "JUDE BELLINGHAM", flag: "inglaterra", stat: "127 M€", revealed: false },
+            { rank: 9, name: "FLORIAN WIRTZ", flag: "alemania", stat: "125 M€", revealed: false },
+            { rank: 10, name: "ENZO FERNANDEZ", flag: "argentina", stat: "121 M€", revealed: false },
         ]
     },
     {
