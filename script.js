@@ -6,7 +6,6 @@ const removeAccents = (str) => {
               .replace(/[ÚÙÜÛ]/gi, 'U');
 };
 
-
 const dbEquipos = {
     "REAL MADRID": [
         { name: "COURTOIS", rating: 90, positions: ["POR"]},
