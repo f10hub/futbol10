@@ -312,7 +312,22 @@ const dbEquipos = {
 
     "GETAFE": [
         { name: "DAVID SORIA", rating: 80, positions: ["POR"] },
-        { name: "ABDEL ABQAR", rating: 74, positions: ["DFC", "LD"] },
+        { name: "ABDEL ABQAR", rating: 74, positions: ["DFC"] },
+        { name: "BOSELLI", rating: 72, positions: ["DFC", "LD"] },
+        { name: "BERROCAL", rating: 71, positions: ["DFC"] },
+        { name: "DJENE", rating: 77, positions: ["DFC", "LD", "MCD"] },
+        { name: "KIKO FEMENIA", rating: 74, positions: ["LD"] },
+        { name: "BEKHOUCHA", rating: 64, positions: ["LD"] },
+        { name: "MARIO MARTIN", rating: 74, positions: ["MC", "MCD"] },
+        { name: "YVAN NEYOU", rating: 74, positions: ["MC", "MCD"] },
+        { name: "JAVI MUÑOZ", rating: 74, positions: ["MC", "MCO"] },
+        { name: "COBA DA COSTA", rating: 70, positions: ["EI", "ED"] },
+        { name: "PETER FEDERICO", rating: 69, positions: ["EI", "ED"] },
+        { name: "JUANMI", rating: 72, positions: ["EI", "DC"] },
+        { name: "SATRIANO", rating: 75, positions: ["EI", "DC", "MCO"] },
+        { name: "UCHE", rating: 76, positions: ["DC", "MCO"] },
+        { name: "BORJA MAYORAL", rating: 77, positions: ["DC"] }
+        
         
     ],
         
