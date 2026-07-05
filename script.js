@@ -325,10 +325,55 @@ const dbEquipos = {
         { name: "SATRIANO", rating: 75, positions: ["EI", "DC", "MCO"] },
         { name: "UCHE", rating: 76, positions: ["DC", "MCO"] },
         { name: "BORJA MAYORAL", rating: 77, positions: ["DC"] }
-        
-        
     ],
-        
+   "LEVANTE": [
+        { name: "PABLO CAMPOS", rating: 71, positions: ["POR"] },
+        { name: "DANI MARTÍN", rating: 66, positions: ["POR"] },
+        { name: "ADRIÁN DELA", rating: 74, positions: ["DFC"] },
+        { name: "JORGE CABELLO", rating: 69, positions: ["DFC"] },
+        { name: "UNAI ELGEZABAL", rating: 68, positions: ["DFC"] },
+        { name: "JEREMY TOLJAN", rating: 74, positions: ["LD"] },
+        { name: "VÍCTOR GARCÍA", rating: 72, positions: ["LD"] },
+        { name: "XAVI GRANDE", rating: 67, positions: ["LD"] },
+        { name: "NACHO PÉREZ", rating: 64, positions: ["LD"] },
+        { name: "KERVIN ARRIAGA", rating: 74, positions: ["MCD"] },
+        { name: "ORIOL REY", rating: 73, positions: ["MCD"] },
+        { name: "ENZO BARDELI", rating: 77, positions: ["MC"] },
+        { name: "JON ANDER OLASAGASTI", rating: 74, positions: ["MC"] },
+        { name: "EDGAR ALCAÑIZ", rating: 62, positions: ["MC"] },
+        { name: "CARLOS ÁLVAREZ", rating: 82, positions: ["MCO"] },
+        { name: "ROGER BRUGUÉ", rating: 74, positions: ["EI"] },
+        { name: "PACO CORTÉS", rating: 71, positions: ["EI"] },
+        { name: "KAREEM TUNDE", rating: 74, positions: ["ED"] },
+        { name: "TAY ABED", rating: 69, positions: ["ED"] },
+        { name: "CARLOS ESPÍ", rating: 84, positions: ["DC"] },
+        { name: "KARL ETTA EYONG", rating: 82, positions: ["DC"] },
+        { name: "IVÁN ROMERO", rating: 75, positions: ["DC"] }
+    ],
+    "OSASUNA": [
+        { name: "SERGIO HERRERA", rating: 75, positions: ["POR"] },
+        { name: "AITOR FERNÁNDEZ", rating: 69, positions: ["POR"] },
+        { name: "ENZO BOYOMO", rating: 82, positions: ["DFC"] },
+        { name: "JORGE HERRANDO", rating: 75, positions: ["DFC"] },
+        { name: "ALEJANDRO CATENA", rating: 74, positions: ["DFC"] },
+        { name: "ABEL BRETONES", rating: 75, positions: ["LI"] },
+        { name: "VALENTIN ROSIER", rating: 74, positions: ["LD"] },
+        { name: "IÑIGO ARGUIBIDE", rating: 67, positions: ["LD"] },
+        { name: "LUCAS TORRÓ", rating: 74, positions: ["MCD"] },
+        { name: "IKER MUÑOZ", rating: 73, positions: ["MCD"] },
+        { name: "JON MONCAYOLA", rating: 78, positions: ["MC"] },
+        { name: "ASIER OSAMBELA", rating: 69, positions: ["MC"] },
+        { name: "AIMAR OROZ", rating: 79, positions: ["MCO"] },
+        { name: "MOI GÓMEZ", rating: 72, positions: ["MCO", "MC"] },
+        { name: "RAÚL MORO", rating: 75, positions: ["EI"] },
+        { name: "RUBÉN GARCÍA", rating: 73, positions: ["ED"] },
+        { name: "KIKE BARJA", rating: 72, positions: ["ED"] },
+        { name: "IKER BENITO", rating: 71, positions: ["ED"] },
+        { name: "RAÚL GARCÍA", rating: 74, positions: ["DC"] },
+        { name: "ANTE BUDIMIR", rating: 75, positions: ["DC"] }
+    ],
+
+    
 };
 // Generamos automáticamente las listas planas para Ahorcado, Blur, Sobres, etc.
 const QWERTY_LAYOUT = ["QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM"];
