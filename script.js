@@ -142,7 +142,6 @@ const dbEquipos = {
         { name: "RADU", rating: 78, positions: ["POR"] },
         { name: "IVAN VILLAR", rating: 72, positions: ["POR"] },
         { name: "STARFELT", rating: 78, positions: ["DFC"] },
-        { name: "AIDOO", rating: 73, positions: ["DFC"] },
         { name: "YOEL LAGO", rating: 71, positions: ["DFC"] },
         { name: "UNAI NUÑEZ", rating: 75, positions: ["DFC", "LD"] },
         { name: "CARREIRA", rating: 80, positions: ["LD"] },
