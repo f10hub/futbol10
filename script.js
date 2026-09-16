@@ -351,73 +351,83 @@ const dbEquipos = {
         { name: "VILLALIBRE", rating: 74, positions: ["DC"] },
         { name: "ARANA", rating: 69, positions: ["DC"] }
     ],
-
-
-    
-   
-
-
-
-
-    
     
     "GETAFE": [
         { name: "DAVID SORIA", rating: 80, positions: ["POR"] },
+        { name: "JIRI LETACEK", rating: 72, positions: ["POR"] },
         { name: "ABDEL ABQAR", rating: 74, positions: ["DFC"] },
+        { name: "ZAID ROMERO", rating: 73, positions: ["DFC"] },
         { name: "BOSELLI", rating: 72, positions: ["DFC", "LD"] },
-        { name: "BERROCAL", rating: 71, positions: ["DFC"] },
         { name: "DJENE", rating: 77, positions: ["DFC", "LD", "MCD"] },
+        { name: "SABA SAZONOV", rating: 68, positions: ["DFC"] },
+        { name: "JEAN IVES VALOU", rating: 65, positions: ["DFC"] },
+        { name: "JOHAN MOJICA", rating: 74, positions: ["LI"] },
+        { name: "DAVINCHI", rating: 65, positions: ["LI"] },
+        { name: "ANDRES GARCIA", rating: 74, positions: ["LD"] },
         { name: "KIKO FEMENIA", rating: 74, positions: ["LD"] },
-        { name: "BEKHOUCHA", rating: 64, positions: ["LD"] },
         { name: "MARIO MARTIN", rating: 74, positions: ["MC", "MCD"] },
-        { name: "YVAN NEYOU", rating: 74, positions: ["MC", "MCD"] },
-        { name: "JAVI MUÑOZ", rating: 74, positions: ["MC", "MCO"] },
-        { name: "COBA DA COSTA", rating: 70, positions: ["EI", "ED"] },
-        { name: "PETER FEDERICO", rating: 69, positions: ["EI", "ED"] },
+        { name: "OREL MANGALA", rating: 78, positions: ["MCD"] },
+        { name: "NEMANJA GUDELJ", rating: 75, positions: ["MCD"] },
+        { name: "RAMON TERRATS", rating: 73, positions: ["MC"] },
+        { name: "FRANCHO SERRANO", rating: 72, positions: ["MC"] },
         { name: "JUANMI", rating: 72, positions: ["EI", "DC"] },
-        { name: "SATRIANO", rating: 75, positions: ["EI", "DC", "MCO"] },
         { name: "UCHE", rating: 76, positions: ["DC", "MCO"] },
-        { name: "BORJA MAYORAL", rating: 77, positions: ["DC"] }
+        { name: "SATRIANO", rating: 75, positions: ["EI", "DC", "MCO"] },
+        { name: "ENES UNAL", rating: 78, positions: ["DC"] },
+        { name: "BORJA MAYORAL", rating: 77, positions: ["DC"] },
+        { name: "IVAN AZON", rating: 74, positions: ["DC"] }
     ],
-   "LEVANTE": [
+    
+    "LEVANTE": [
+        { name: "MATHEW RYAN", rating: 76, positions: ["POR"] },
         { name: "PABLO CAMPOS", rating: 69, positions: ["POR"] },
+        { name: "ALEX PRIMO", rating: 65, positions: ["POR"] },
+        { name: "AXEL TAPE", rating: 74, positions: ["DFC"] },
         { name: "ADRIAN DELA", rating: 74, positions: ["DFC", "LD"] },
+        { name: "IFEANYI NDUKWE", rating: 70, positions: ["DFC"] },
+        { name: "AISSA MANDI", rating: 74, positions: ["DFC"] },
         { name: "JORGE CABELLO", rating: 66, positions: ["DFC", "LI"] },
-        { name: "ELGEZABAL", rating: 71, positions: ["DFC"] },
+        { name: "MANU SANCHEZ", rating: 76, positions: ["LI"] },
+        { name: "MARC SANTOS", rating: 60, positions: ["LI"] },
         { name: "TOLJAN", rating: 74, positions: ["LD", "LI"] },
-        { name: "VICTOR GARCIA", rating: 71, positions: ["LD"] },
-        { name: "XAVI GRANDE", rating: 69, positions: ["LD"] },
         { name: "NACHO PEREZ", rating: 67, positions: ["LD"] },
-        { name: "ARRIAGA", rating: 74, positions: ["MCD", "MC"] },
         { name: "ORIOL REY", rating: 73, positions: ["MCD", "MC"] },
         { name: "BARDELI", rating: 73, positions: ["MC", "MCO"] },
+        { name: "HUGO SOTELO", rating: 74, positions: ["MC"] },
         { name: "OLASAGASTI", rating: 74, positions: ["MC", "MCD"] },
-        { name: "CARLOS ALVAREZ", rating: 77, positions: ["MCO", "ED"] },
+        { name: "DANI REQUENA", rating: 68, positions: ["MC"] },
+        { name: "THIAGO FERNANDEZ", rating: 73, positions: ["EI"] },
         { name: "BRUGUI", rating: 73, positions: ["EI", "DC"] },
         { name: "PACO CORTES", rating: 68, positions: ["EI"] },
-        { name: "KAREEM TUNDE", rating: 68, positions: ["EI", "ED"] },
-        { name: "TAY ABED", rating: 66, positions: ["ED", "MCO"] },
-        { name: "CARLOS ESPI", rating: 75, positions: ["DC"] },
+        { name: "VICTOR GARCIA", rating: 71, positions: ["LD"] },
         { name: "ETTA EYONG", rating: 75, positions: ["DC"] },
-        { name: "IVAN ROMERO", rating: 75, positions: ["DC", "EI"] }
+        { name: "PETAR RATKOV", rating: 76, positions: ["DC"] },
+        { name: "IVAN ROMERO", rating: 75, positions: ["DC", "EI"] },
+        { name: "YANIS MUSUAYI", rating: 65, positions: ["DC"] }
     ],
+    
     "OSASUNA": [
         { name: "SERGIO HERRERA", rating: 79, positions: ["POR"] },
         { name: "AITOR FERNANDEZ", rating: 77, positions: ["POR"] },
         { name: "BOYOMO", rating: 79, positions: ["DFC"] },
         { name: "JORGE HERRANDO", rating: 75, positions: ["DFC"] },
         { name: "CATENA", rating: 78, positions: ["DFC"] },
+        { name: "ROCKSON YEBOAH", rating: 65, positions: ["DFC"] },
         { name: "ABEL BRETONES", rating: 75, positions: ["LI"] },
+        { name: "DIEGO RICO", rating: 74, positions: ["LI"] },
         { name: "ROSIER", rating: 78, positions: ["LD"] },
+        { name: "IÑIGO ARGUIBIDE", rating: 68, positions: ["LD"] },
         { name: "LUCAS TORRO", rating: 77, positions: ["MCD", "MC"] },
         { name: "IKER MUÑOZ", rating: 71, positions: ["MCD", "MC"] },
         { name: "MONCAYOLA", rating: 77, positions: ["MC", "MCD", "LD"] },
+        { name: "ASIER OSAMBELA", rating: 68, positions: ["MC"] },
         { name: "AIMAR OROZ", rating: 77, positions: ["MCO", "MC", "EI"] },
         { name: "MOI GOMEZ", rating: 76, positions: ["MCO", "MC", "EI"] },
         { name: "RAUL MORO", rating: 75, positions: ["EI", "ED"] },
+        { name: "ROMAIN DEL CASTILLO", rating: 78, positions: ["ED"] },
+        { name: "JONATHAN DUBASIN", rating: 74, positions: ["ED"] },
         { name: "RUBEN GARCIA", rating: 78, positions: ["ED", "MCO"] },
         { name: "KIKE BARJA", rating: 73, positions: ["ED", "EI"] },
-        { name: "IKER BENITO", rating: 71, positions: ["ED", "EI"] },
         { name: "RAUL GARCIA", rating: 74, positions: ["DC"] },
         { name: "BUDIMIR", rating: 82, positions: ["DC"] }
     ],
