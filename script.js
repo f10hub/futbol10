@@ -3156,53 +3156,51 @@ function getTeamRating(clubName) {
     return Math.floor(total / 11);
 }
 
-// SIMULADOR CON DIFICULTAD PROGRESIVA
+// SIMULADOR DE COPA F10 - SORTEO 100% ALEATORIO (20 EQUIPOS)
 function startMatchSimulation() {
     const lineup = getLineup();
     let myTotalRating = 0;
     lineup.forEach(p => { if(p) myTotalRating += getPlayerRating(p); });
     let myRating = Math.floor(myTotalRating / 11);
 
-    // 1. Calculamos la media de todos los equipos y los ordenamos de PEOR a MEJOR
+    // 1. Obtenemos TODOS los equipos de la base de datos (los 20 equipos)
     let allTeams = Object.keys(dbEquipos).map(club => {
         return { name: club, rating: getTeamRating(club) };
-    }).sort((a, b) => a.rating - b.rating);
+    });
 
-    // 2. Filtramos los que ya hemos eliminado en rondas anteriores
+    // 2. Filtramos para quitar SÓLO los equipos contra los que ya hemos jugado en este torneo
     let availableTeams = allTeams.filter(t => !tournamentState.facedTeams.includes(t.name));
 
-    let rivalClubObj;
-    
-    // 3. Lógica de Dificultad Progresiva
-    if (tournamentState.roundIndex === 0) {
-        // CUARTOS: Selecciona uno de los 2 peores equipos disponibles
-        let easyTier = availableTeams.slice(0, 2);
-        rivalClubObj = easyTier[Math.floor(Math.random() * easyTier.length)];
-    } else if (tournamentState.roundIndex === 1) {
-        // SEMIFINALES: Selecciona un equipo de media tabla superior
-        let midIndex = Math.floor(availableTeams.length / 2);
-        rivalClubObj = availableTeams[midIndex];
-    } else {
-        // FINAL: Selecciona a la fuerza al MEJOR equipo restante
-        rivalClubObj = availableTeams[availableTeams.length - 1];
-    }
+    // 3. SORTEO PURO: Mezclamos aleatoriamente todos los equipos disponibles
+    availableTeams.sort(() => Math.random() - 0.5);
+
+    // 4. El rival será el primer equipo tras la mezcla. ¡Te puede tocar el mejor o el peor!
+    let rivalClubObj = availableTeams[0];
 
     const rivalClub = rivalClubObj.name;
     const cpuRating = rivalClubObj.rating;
-    
-    // Guardamos el rival en el historial para no repetirlo
+
+    // Guardamos el rival en el historial para no repetirlo en este torneo
     tournamentState.facedTeams.push(rivalClub);
 
+    // Obtenemos los 11 mejores jugadores del rival
     const cpuRoster = [...dbEquipos[rivalClub]].sort((a,b) => b.rating - a.rating).slice(0, 11);
 
-    matchState = { 
-        minute: 0, 
-        addedTime: Math.floor(Math.random() * 4) + 2, 
+    // Inicializamos las estadísticas del partido
+    matchState = {
+        minute: 0,
+        addedTime: Math.floor(Math.random() * 4) + 2,
         myGoals: 0, cpuGoals: 0, myPenalties: 0, cpuPenalties: 0,
-        myRating: myRating, cpuRating: cpuRating, 
-        cpuClub: rivalClub, cpuPlayers: cpuRoster, 
-        isFinished: false, phase: 'regular' 
+        myRating: myRating, cpuRating: cpuRating,
+        cpuClub: rivalClub, cpuPlayers: cpuRoster,
+        isFinished: false, phase: 'regular'
     };
+
+    // 5. ACTUALIZAR AUTOMÁTICAMENTE EL TÍTULO DE LA RONDA
+    const fases = ["OCTAVOS DE FINAL", "CUARTOS DE FINAL", "SEMIFINALES", "GRAN FINAL"];
+    let faseActual = fases[tournamentState.roundIndex] || "PARTIDO";
+    document.getElementById('match-competition').innerText = `COPA F10 - ${faseActual}`;
+}
 
     document.getElementById('match-competition').innerText = `COPA F10 - ${tournamentState.rounds[tournamentState.roundIndex]}`;
     document.getElementById('my-team-rating').innerText = `Media: ${myRating}`;
@@ -3431,7 +3429,7 @@ function endSimulatedMatch() {
     const btn = document.getElementById('match-close-btn');
     
     if (matchState.myGoals > matchState.cpuGoals) {
-        if (tournamentState.roundIndex === 2) { // Ganó la final
+        if (tournamentState.roundIndex === 3) { // Ganó la final
             logEvent("🏆 ¡CAMPEÓN DEL TORNEO! Has ganado +150 FutCoins 🪙", "#00ff87");
             addCoins(150);
             // NUEVO: Sumar el torneo y checkear la SuperCoin
