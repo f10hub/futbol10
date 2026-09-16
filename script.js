@@ -177,7 +177,6 @@ const dbEquipos = {
         { name: "IAGO ASPAS", rating: 81, positions: ["DC"] }        
     ],
 
-    
     "REAL SOCIEDAD": [
         { name: "REMIRO", rating: 81, positions: ["POR"] },
         { name: "UNAI MARRERO", rating: 74, positions: ["POR"] },
@@ -233,6 +232,9 @@ const dbEquipos = {
         { name: "GURUZETA", rating: 78, positions: ["DC"] },
         { name: "MAROAN SANNADI", rating: 71, positions: ["DC"] }
     ],
+
+
+
 
     
     
