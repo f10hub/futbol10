@@ -3172,13 +3172,12 @@ function startMatchSimulation() {
     // 3. SORTEO PURO: Mezclamos aleatoriamente todos los equipos disponibles
     availableTeams.sort(() => Math.random() - 0.5);
 
-    // 4. El rival será el primer equipo tras la mezcla. ¡Te puede tocar el mejor o el peor!
+    // 4. El rival será el primer equipo tras la mezcla.
     let rivalClubObj = availableTeams[0];
-
     const rivalClub = rivalClubObj.name;
     const cpuRating = rivalClubObj.rating;
 
-    // Guardamos el rival en el historial para no repetirlo en este torneo
+    // Guardamos el rival en el historial
     tournamentState.facedTeams.push(rivalClub);
 
     // Obtenemos los 11 mejores jugadores del rival
@@ -3198,9 +3197,8 @@ function startMatchSimulation() {
     const fases = ["OCTAVOS DE FINAL", "CUARTOS DE FINAL", "SEMIFINALES", "GRAN FINAL"];
     let faseActual = fases[tournamentState.roundIndex] || "PARTIDO";
     document.getElementById('match-competition').innerText = `COPA F10 - ${faseActual}`;
-}
-
-    document.getElementById('match-competition').innerText = `COPA F10 - ${tournamentState.rounds[tournamentState.roundIndex]}`;
+    
+    // 6. ACTUALIZAR INTERFAZ DEL PARTIDO
     document.getElementById('my-team-rating').innerText = `Media: ${myRating}`;
     document.getElementById('cpu-team-name').innerText = rivalClub;
     document.getElementById('cpu-team-rating').innerText = `Media: ${cpuRating}`;
@@ -3221,6 +3219,7 @@ function startMatchSimulation() {
     if(matchInterval) clearInterval(matchInterval);
     matchInterval = setInterval(simulateMinute, 100);
 }
+
 function simulateMinute() {
     if (matchState.isFinished) return;
 
