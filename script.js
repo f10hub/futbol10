@@ -1000,16 +1000,16 @@ const top10DB = [
         title: 'TOP 10 GOLEADORES',
         desc: 'Máximos anotadores históricos de la Champions League',
         items: [
-            { rank: 1, name: "CRISTIANO RONALDO", flag: "portugal", stat: "141 Goles", revealed: false },
+            { rank: 1, name: "CRISTIANO RONALDO", flag: "portugal", stat: "140 Goles", revealed: false },
             { rank: 2, name: "LIONEL MESSI", flag: "argentina", stat: "129 Goles", revealed: false },
             { rank: 3, name: "ROBERT LEWANDOWSKI", flag: "polonia", stat: "109 Goles", revealed: false },
             { rank: 4, name: "KARIM BENZEMA", flag: "francia", stat: "90 Goles", revealed: false },
-            { rank: 5, name: "RAUL GONZALEZ", flag: "espana", stat: "71 Goles", revealed: false },
-            { rank: 6, name: "KYLIAN MBAPPE", flag: "francia", stat: "70 Goles", revealed: false },
-            { rank: 7, name: "RUUD VAN NISTELROOY", flag: "paises_bajos", stat: "60 Goles", revealed: false },
-            { rank: 8, name: "ANDRIY SHEVCHENKO", flag: "ucrania", stat: "59 Goles", revealed: false },
-            { rank: 9, name: "ERLING HAALAND", flag: "noruega", stat: "57 Goles", revealed: false },
-            { rank: 10, name: "THOMAS MULLER", flag: "alemania", stat: "57 Goles", revealed: false }
+            { rank: 5, name: "KYLIAN MBAPPE", flag: "francia", stat: "71 Goles", revealed: false },
+            { rank: 6, name: "RAUL GONZALEZ", flag: "espana", stat: "71 Goles", revealed: false },
+            { rank: 7, name: "ERLING HAALAND", flag: "noruega", stat: "59 Goles", revealed: false },
+            { rank: 8, name: "THOMAS MULLER", flag: "alemania", stat: "57 Goles", revealed: false },
+            { rank: 9, name: "RUUD VAN NISTELROOY", flag: "paises_bajos", stat: "56 Goles", revealed: false },
+            { rank: 10, name: "HARRY KANE", flag: "inglaterra", stat: "55 Goles", revealed: false }
         ]
     },
     {
@@ -1018,15 +1018,15 @@ const top10DB = [
         desc: 'Máximos salarios a la semana actuales de LaLiga',
         items: [
             { rank: 1, name: "KYLIAN MBAPPE", flag: "francia", stat: "600.962€", revealed: false },
-            { rank: 2, name: "VINICIUS JUNIOR", flag: "brasil", stat: "480.769€", revealed: false },
-            { rank: 3, name: "DAVID ALABA", flag: "austria", stat: "432.692€", revealed: false },
-            { rank: 4, name: "ROBERT LEWANDOWSKI", flag: "polonia", stat: "400.577€", revealed: false },
-            { rank: 5, name: "JUDE BELLINGHAM", flag: "inglaterra", stat: "400.577€", revealed: false },
-            { rank: 6, name: "JAN OBLAK", flag: "eslovenia", stat: "400.577€", revealed: false },
-            { rank: 7, name: "FRENKIE DE JONG", flag: "paises_bajos", stat: "365.385€", revealed: false },
+            { rank: 2, name: "VINICIUS JUNIOR", flag: "brasil", stat: "600.962€", revealed: false },
+            { rank: 3, name: "RODRI", flag: "espana", stat: "520.769€", revealed: false },
+            { rank: 4, name: "JAN OBLAK", flag: "eslovenia", stat: "400.577€", revealed: false },
+            { rank: 5, name: "LAMINE YAMAL", flag: "espana", stat: "400.577€", revealed: false },
+            { rank: 6, name: "JUDE BELLINGHAM", flag: "inglaterra", stat: "400.577€", revealed: false },
+            { rank: 7, name: "NICO WILLIAMS", flag: "espana", stat: "330.577€", revealed: false },
             { rank: 8, name: "FEDERICO VALVERDE", flag: "uruguay", stat: "320.577€", revealed: false },
-            { rank: 9, name: "LAMINE YAMAL", flag: "espana", stat: "320.577€", revealed: false },
-            { rank: 10, name: "RAPHINHA", flag: "brasil", stat: "320.577€", revealed: false }
+            { rank: 9, name: "TRENT ALEXANDER-ARNOLD", flag: "inglaterra", stat: "320.577€", revealed: false },
+            { rank: 10, name: "RODRYGO", flag: "brasil", stat: "320.577€", revealed: false }
         ]
     },
     {
@@ -1034,16 +1034,16 @@ const top10DB = [
         title: 'TOP 10 SALARIOS',
         desc: 'Máximos salarios a la semana actuales de la Premier League',
         items: [
-            { rank: 1, name: "ERLING HAALAND", flag: "noruega", stat: "525.000€", revealed: false },
-            { rank: 2, name: "MOHAMED SALAH", flag: "egipto", stat: "400.000", revealed: false },
-            { rank: 3, name: "VIRJIL VAN DIJK", flag: "paises_bajos", stat: "350.000€", revealed: false },
-            { rank: 4, name: "CASEMIRO", flag: "brasil", stat: "350.000€", revealed: false },
-            { rank: 5, name: "BERNARDO SILVA", flag: "portugal", stat: "300.000€", revealed: false },
-            { rank: 6, name: "BRUNO FERNANDES", flag: "portugal", stat: "300.000€", revealed: false },
-            { rank: 7, name: "OMAR MARMOUSH", flag: "egipto", stat: "295.000€", revealed: false },
-            { rank: 8, name: "KAI HAVERTZ", flag: "alemania", stat: "280.000€", revealed: false },
-            { rank: 9, name: "ALEXANDER ISAK", flag: "suecia", stat: "280.000€", revealed: false },
-            { rank: 10, name: "GABRIEL JESUS", flag: "brasil", stat: "265.000€", revealed: false }
+            { rank: 1, name: "ERLING HAALAND", flag: "noruega", stat: "614.698€", revealed: false },
+            { rank: 2, name: "VIRJIL VAN DIJK", flag: "paises_bajos", stat: "409.799€", revealed: false },
+            { rank: 3, name: "MARCUS RASHFORD", flag: "inglaterra", stat: "351.256€", revealed: false },
+            { rank: 4, name: "BUYAKO SAKA", flag: "inglaterra", stat: "351.256€", revealed: false },
+            { rank: 5, name: "BRUNO FERNANDES", flag: "portugal", stat: "351.256€", revealed: false },
+            { rank: 6, name: "RYAN GRAVENBERCH", flag: "paises_bajos", stat: "327.839€", revealed: false },
+            { rank: 7, name: "ALEXANDER ISAK", flag: "suecia", stat: "327.839€", revealed: false },
+            { rank: 8, name: "PHIL FODEN", flag: "inglaterra", stat: "327.839€", revealed: false },
+            { rank: 9, name: "KAI HAVERTZ", flag: "alemania", stat: "327.839€", revealed: false },
+            { rank: 10, name: "WILLIAM SALIBA", flag: "francia", stat: "316.130€", revealed: false }
         ]
     },
     {
@@ -1051,13 +1051,13 @@ const top10DB = [
         title: 'TOP 10 MUNDIALES',
         desc: 'Máximos goleadores históricos de la Copa del Mundo',
         items: [
-            { rank: 1, name: "LIONEL MESSI", flag: "argentina", stat: "20 Goles", revealed: false },
-            { rank: 2, name: "KYLIAN MBAPPE", flag: "francia", stat: "18 Goles", revealed: false },
+            { rank: 1, name: "KYLIAN MBAPPE", flag: "francia", stat: "22 Goles", revealed: false },
+            { rank: 2, name: "LIONEL MESSI", flag: "argentina", stat: "21 Goles", revealed: false },
             { rank: 3, name: "MIROSLAV KLOSE", flag: "alemania", stat: "16 Goles", revealed: false },
             { rank: 4, name: "RONALDO NAZARIO", flag: "brasil", stat: "15 Goles", revealed: false },
             { rank: 5, name: "GERD MULLER", flag: "alemania", stat: "14 Goles", revealed: false },
-            { rank: 6, name: "JUST FONTAINE", flag: "francia", stat: "13 Goles", revealed: false },
-            { rank: 7, name: "HARRY KANE", flag: "inglaterra", stat: "13 Goles", revealed: false },
+            { rank: 6, name: "HARRY KANE", flag: "inglaterra", stat: "14 Goles", revealed: false },
+            { rank: 7, name: "JUST FONTAINE", flag: "francia", stat: "13 Goles", revealed: false },
             { rank: 8, name: "PELE", flag: "brasil", stat: "12 Goles", revealed: false },
             { rank: 9, name: "SANDOR KOCSIS", flag: "hungria", stat: "11 Goles", revealed: false },
             { rank: 10, name: "JURGEN KLINSMANN", flag: "alemania", stat: "11 Goles", revealed: false }
@@ -1072,12 +1072,13 @@ const top10DB = [
             { rank: 2, name: "KYLIAN MBAPPE", flag: "francia", stat: "180 M€", revealed: false },
             { rank: 3, name: "OUSMANE DEMBELE", flag: "francia", stat: "148 M€", revealed: false },
             { rank: 4, name: "ALEXANDER ISAK", flag: "suecia", stat: "145 M€", revealed: false },
-            { rank: 5, name: "ELLIOT ANDERSON", flag: "inglaterra", stat: "135 M€", revealed: false },
-            { rank: 6, name: "PHILIPPE COUTINHO", flag: "brasil", stat: "135 M€", revealed: false },
-            { rank: 7, name: "JOAO FELIX", flag: "portugal", stat: "127 M€", revealed: false },
-            { rank: 8, name: "JUDE BELLINGHAM", flag: "inglaterra", stat: "127 M€", revealed: false },
-            { rank: 9, name: "FLORIAN WIRTZ", flag: "alemania", stat: "125 M€", revealed: false },
-            { rank: 10, name: "ENZO FERNANDEZ", flag: "argentina", stat: "121 M€", revealed: false },
+            { rank: 5, name: "ENZO FERNANDEZ", flag: "argentina", stat: "145 M€", revealed: false },
+            { rank: 6, name: "MORGAN ROGERS", flag: "inglaterra", stat: "138 M€", revealed: false },
+            { rank: 7, name: "ELLIOT ANDERSON", flag: "inglaterra", stat: "135 M€", revealed: false },
+            { rank: 8, name: "PHILIPPE COUTINHO", flag: "brasil", stat: "135 M€", revealed: false },
+            { rank: 9, name: "JOAO FELIX", flag: "portugal", stat: "127 M€", revealed: false },
+            { rank: 10, name: "JUDE BELLINGHAM", flag: "inglaterra", stat: "127 M€", revealed: false },
+         
         ]
     },
     {
