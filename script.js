@@ -581,8 +581,6 @@ const dbEquipos = {
     ]
 };
 
-    
-};
 // Generamos automáticamente las listas planas para Ahorcado, Blur, Sobres, etc.
 const QWERTY_LAYOUT = ["QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM"];
 const players = [];
