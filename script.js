@@ -48,7 +48,7 @@ const dbEquipos = {
         { name: "BALDE", rating: 82, positions: ["LI"] },
         { name: "KOUNDE", rating: 85, positions: ["LD"] },
         { name: "JOAO CANCELO", rating: 83, positions: ["LD", "LI"] },
-        { name: "RODRI", rating: 90, positions: ["MCD"] },
+        { name: "RODRI", rating: 90, positions: ["MCD", "MC"] },
         { name: "PEDRI", rating: 90, positions: ["MC", "MCD", "MCO"] },
         { name: "DE JONG", rating: 86, positions: ["MC", "MCD", "MCO"] },
         { name: "GAVI", rating: 83, positions: ["MC", "MCD", "MCO"] },
