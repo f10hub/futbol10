@@ -2821,11 +2821,13 @@ function updatePacksProgress() {
         }
     });
 
-    // Para el sobre gratis (progreso total)
+// Para el sobre gratis (progreso total filtrando jugadores eliminados de la BD)
     const progGratis = document.getElementById('prog-gratis');
-    if(progGratis) progGratis.innerText = `${data.unlocked.length}/${players.length}`;
-}
-
+    if(progGratis) {
+        const cartasReales = data.unlocked.filter(p => players.includes(p)).length;
+        progGratis.innerText = `${cartasReales}/${players.length}`;
+    }
+    
 function populateTeamFilter() {
     const select = document.getElementById('filter-team');
     if(select.options.length > 1) return; // Si ya se llenó, no repetir
