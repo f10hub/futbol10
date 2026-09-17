@@ -3890,3 +3890,92 @@ function showMissionTab(type) {
     // Pintamos las misiones
     renderMissions(type);
 }
+
+
+// --- SISTEMA DE TOKENS Y ESTADO ---
+function getCareerTokens() { return parseInt(localStorage.getItem('f10_career_tokens')) || 0; }
+function addCareerTokens(amount) { 
+    let current = getCareerTokens() + amount;
+    localStorage.setItem('f10_career_tokens', current); 
+    const display = document.getElementById('career-tokens-display');
+    if (display) display.innerText = current;
+}
+function getCareerData() { return JSON.parse(localStorage.getItem('f10_career_player')) || null; }
+function saveCareerData(data) { localStorage.setItem('f10_career_player', JSON.stringify(data)); }
+
+// --- INICIALIZACIÓN ---
+// Busca la función showGame(gameId) que ya tienes y añade: if(gameId === 'career') initCareer();
+function initCareer() {
+    document.getElementById('career-tokens-display').innerText = getCareerTokens();
+    const data = getCareerData();
+    
+    if (!data) {
+        document.getElementById('career-create-view').classList.remove('hidden');
+        document.getElementById('career-dashboard-view').classList.add('hidden');
+    } else {
+        document.getElementById('career-create-view').classList.add('hidden');
+        document.getElementById('career-dashboard-view').classList.remove('hidden');
+        renderCareerDashboard(data);
+    }
+}
+
+function createCareerPlayer() {
+    const input = document.getElementById('career-name-input').value.trim().toUpperCase();
+    if (input.length < 3) {
+        mostrarMensajePro("⚠️ ERROR", "El nombre debe tener al menos 3 letras.");
+        return;
+    }
+    
+    const newPlayer = {
+        name: input,
+        stats: { regate: 60, tiro: 60, pase: 60, fisico: 60 },
+        overall: 60
+    };
+    
+    saveCareerData(newPlayer);
+    initCareer();
+    mostrarMensajePro("🌟 LEYENDA CREADA", "Tu carrera acaba de empezar. Juega a otros minijuegos para ganar Tokens de Carrera y subir tus atributos.");
+}
+
+// --- ACTUALIZACIÓN Y RENDERIZADO ---
+function upgradeCareerStat(statName) {
+    if (getCareerTokens() < 1) {
+        mostrarMensajePro("❌ SIN TOKENS", "Necesitas 1 Token de Carrera (🎫). Consíguelos ganando torneos o acertando rachas largas en el Ahorcado y Blur Guess.");
+        return;
+    }
+    
+    let data = getCareerData();
+    if (data.stats[statName] >= 99) {
+        mostrarMensajePro("MAXEADO", "Este atributo ya está al máximo (99).");
+        return;
+    }
+
+    // Cobrar token y subir stat
+    addCareerTokens(-1);
+    data.stats[statName] += 1;
+    
+    // Recalcular media (promedio de los 4 atributos)
+    const sum = data.stats.regate + data.stats.tiro + data.stats.pase + data.stats.fisico;
+    data.overall = Math.floor(sum / 4);
+    
+    saveCareerData(data);
+    renderCareerDashboard(data);
+}
+
+function renderCareerDashboard(data) {
+    document.getElementById('career-player-name').innerText = data.name;
+    document.getElementById('career-player-rating').innerText = data.overall;
+    
+    document.getElementById('stat-regate').innerText = data.stats.regate;
+    document.getElementById('stat-tiro').innerText = data.stats.tiro;
+    document.getElementById('stat-pase').innerText = data.stats.pase;
+    document.getElementById('stat-fisico').innerText = data.stats.fisico;
+
+    // Cambiar color del fondo de la carta según su media
+    const bg = document.getElementById('career-card-bg');
+    if (data.overall >= 84) bg.style.background = "linear-gradient(135deg, #a200ff 0%, #4b0082 100%)"; // Platino
+    else if (data.overall >= 80) bg.style.background = "linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%)"; // Diamante
+    else if (data.overall >= 77) bg.style.background = "linear-gradient(135deg, #ffd700 0%, #ff8c00 100%)"; // Oro
+    else if (data.overall >= 72) bg.style.background = "linear-gradient(135deg, #e6e8fa 0%, #a9a9a9 100%)"; // Plata
+    else bg.style.background = "linear-gradient(135deg, #cd7f32 0%, #8b4513 100%)"; // Bronce
+}
