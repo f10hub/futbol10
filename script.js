@@ -568,7 +568,7 @@ const dbEquipos = {
         { name: "ROY REVIVO", rating: 74, positions: ["LI"] },
         { name: "BUBA SANGARE", rating: 72, positions: ["LD"] },
         { name: "RUBEN SANCHEZ", rating: 72, positions: ["LD"] },
-        { name: "MARC AGUADO", rating: 74, positions: ["MCD"] },
+        { name: "MARC AGUADO", rating: 74, positions: ["MCD", "MC"] },
         { name: "FEDERICO REDONDO", rating: 73, positions: ["MCD"] },
         { name: "MARTIM NETO", rating: 74, positions: ["MC"] },
         { name: "GONZALO VILLAR", rating: 74, positions: ["MC"] },
