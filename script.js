@@ -469,7 +469,7 @@ const dbEquipos = {
         { name: "ANTONIO BLANCO", rating: 78, positions: ["MCD"] },
         { name: "CARLOS PROTESONI", rating: 70, positions: ["MCD"] },
         { name: "PABLO IBAÑEZ", rating: 74, positions: ["MC"] },
-        { name: "CARLES ALENA", rating: 75, positions: ["MC"] },
+        { name: "CARLES ALEÑA", rating: 75, positions: ["MC"] },
         { name: "ANDER GUEVARA", rating: 74, positions: ["MC"] },
         { name: "MIKEL RODRIGUEZ", rating: 68, positions: ["MC"] },
         { name: "SELU DIALLO", rating: 65, positions: ["MC"] },
