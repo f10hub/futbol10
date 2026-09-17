@@ -495,6 +495,56 @@
                 <div class="info-footer" style="margin-top: 15px;">INTENTOS: <span id="zoom-lives">5</span></div>
             </div>
         </div>
+
+        <div id="career-screen" class="screen hidden">
+            <nav class="game-nav">
+                <button onclick="backToCategory()" class="back-btn">← ATRÁS</button>
+                <div class="score-board">TOKENS: <span id="career-tokens-display">0</span> 🎫</div>
+            </nav>
+            <h2 class="logo">EL <span>TRAYECTO</span></h2>
+
+            <!-- Pantalla de Creación -->
+            <div id="career-create-view" class="hl-layout" style="text-align: center;">
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid var(--primary);">
+                    <h3 style="color: white; font-family: 'Orbitron';">CREA TU LEYENDA</h3>
+                    <div class="input-container">
+                        <input type="text" id="career-name-input" placeholder="Nombre en la camiseta..." autocomplete="off" style="width: 100%; margin-bottom: 15px;">
+                        <button class="secondary-btn" style="width: 100%;" onclick="createCareerPlayer()">FIRMAR CONTRATO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Evolución -->
+            <div id="career-dashboard-view" class="hl-layout hidden">
+                <div class="hl-card" style="border-color: #00d2ff;">
+                    <div class="pack-visual" style="background: linear-gradient(135deg, #cd7f32 0%, #8b4513 100%); width: 100%; height: 100%; position: absolute; z-index: 0;" id="career-card-bg"></div>
+                    <div class="hl-info">
+                        <h3 id="career-player-name">Tu Nombre</h3>
+                        <div class="hl-subtitle">Media General</div>
+                        <div class="hl-value" id="career-player-rating" style="color: #00d2ff; text-shadow: 0 0 15px rgba(0,210,255,0.8);">60</div>
+                    </div>
+                </div>
+                
+                <div style="width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 10px;">
+                    <div class="profile-stat-item">
+                        <span>👟 Regate: <span id="stat-regate" style="color: white; font-weight: bold;">60</span></span>
+                        <button class="sell-btn" style="background: #00d2ff; width: auto;" onclick="upgradeCareerStat('regate')">MEJORAR (1 🎫)</button>
+                    </div>
+                    <div class="profile-stat-item">
+                        <span>🎯 Tiro: <span id="stat-tiro" style="color: white; font-weight: bold;">60</span></span>
+                        <button class="sell-btn" style="background: #00d2ff; width: auto;" onclick="upgradeCareerStat('tiro')">MEJORAR (1 🎫)</button>
+                    </div>
+                    <div class="profile-stat-item">
+                        <span>👁️ Pase: <span id="stat-pase" style="color: white; font-weight: bold;">60</span></span>
+                        <button class="sell-btn" style="background: #00d2ff; width: auto;" onclick="upgradeCareerStat('pase')">MEJORAR (1 🎫)</button>
+                    </div>
+                    <div class="profile-stat-item">
+                        <span>💪 Físico: <span id="stat-fisico" style="color: white; font-weight: bold;">60</span></span>
+                        <button class="sell-btn" style="background: #00d2ff; width: auto;" onclick="upgradeCareerStat('fisico')">MEJORAR (1 🎫)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div> 
     
