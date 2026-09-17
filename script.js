@@ -1408,6 +1408,7 @@ function showGame(gameId) {
         if(gameId === 'top10') initTop10(); 
         if(gameId === 'knowball') initKnowball();
         if(gameId === 'album') initAlbum();
+        if(gameId === 'career') initCareer();
     }
 }
 
@@ -3978,4 +3979,18 @@ function renderCareerDashboard(data) {
     else if (data.overall >= 77) bg.style.background = "linear-gradient(135deg, #ffd700 0%, #ff8c00 100%)"; // Oro
     else if (data.overall >= 72) bg.style.background = "linear-gradient(135deg, #e6e8fa 0%, #a9a9a9 100%)"; // Plata
     else bg.style.background = "linear-gradient(135deg, #cd7f32 0%, #8b4513 100%)"; // Bronce
+}
+
+
+
+function getCareerLogicalDate() {
+    // Obtenemos la hora actual en España
+    let now = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Madrid"}));
+    
+    // Si es antes de las 12:00 del mediodía, cuenta como el "día anterior"
+    if (now.getHours() < 12) {
+        now.setDate(now.getDate() - 1);
+    }
+    
+    return now.toLocaleDateString('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit' });
 }
