@@ -2781,35 +2781,37 @@ function mostrarSiguienteCartaSobre() {
 
     if (indiceCartaActual < cartasSobreActual.length) {
         let playerName = cartasSobreActual[indiceCartaActual];
+        // Asumimos que tienes playerStats, si no, ajusta cómo sacas el tier y rating
         let tier = playerStats[playerName].tier;
-        let rating = playerStats[playerName].rating; // Sacamos su media para mostrarla
+        let rating = playerStats[playerName].rating; 
 
-        // Creamos la carta
+        // Creamos un escenario o "wrapper" para que la carta respire
+        const wrapper = document.createElement('div');
+        wrapper.className = 'aaa-card-wrapper';
+
+        // Creamos la carta con una nueva clase de animación épica
         const card = document.createElement('div');
-        // Usamos tu clase f10-card y pack-opening-anim para que tiemble al salir
-        card.className = `f10-card tier-${tier} pack-opening-anim`; 
-        card.style.cursor = 'pointer'; // Para que el ratón indique que se puede clicar
+        card.className = `f10-card tier-${tier} aaa-entrance-anim`; 
+        card.style.cursor = 'pointer'; 
         
-        // Al hacer clic en la carta, se llama a sí misma para sacar la siguiente
-        card.onclick = mostrarSiguienteCartaSobre; 
+        // Al hacer clic: animamos la salida y luego cargamos la siguiente
+        card.onclick = () => {
+            card.classList.remove('aaa-entrance-anim');
+            card.classList.add('aaa-exit-anim'); // Animación de irse hacia atrás
+            
+            // Esperamos 400ms a que termine la animación antes de pintar la nueva
+            setTimeout(mostrarSiguienteCartaSobre, 400); 
+        };
 
-        // Puedes ajustar el HTML de tu carta aquí (añadí la media al lado del nombre para que se vea el progreso)
+        // Estructura HTML interna de la carta (añadimos capa holográfica)
         card.innerHTML = `
+            <div class="hologram-overlay"></div>
             <img src="players/${playerName}.jpg" alt="${playerName}" loading="lazy">
-            <div class="card-name">${playerName} | ${rating}</div>
+            <div class="card-name">${playerName} <span style="color:#00ff87;">| ${rating}</span></div>
         `;
 
-        // Texto de ayuda parpadeante debajo de la carta
-        const textoAyuda = document.createElement('p');
-        textoAyuda.style.color = '#fff';
-        textoAyuda.style.marginTop = '20px';
-        textoAyuda.style.fontWeight = 'bold';
-        textoAyuda.innerText = (indiceCartaActual === cartasSobreActual.length - 1) 
-            ? "¡Última carta! (Clic para cerrar)" 
-            : "✨ Haz clic en la carta para descubrir la siguiente...";
-
-        revealContainer.appendChild(card);
-        revealContainer.appendChild(textoAyuda);
+        wrapper.appendChild(card);
+        revealContainer.appendChild(wrapper);
 
         indiceCartaActual++;
     } else {
