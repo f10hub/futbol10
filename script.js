@@ -3979,6 +3979,9 @@ function renderCareerDashboard(data) {
     else if (data.overall >= 77) bg.style.background = "linear-gradient(135deg, #ffd700 0%, #ff8c00 100%)"; // Oro
     else if (data.overall >= 72) bg.style.background = "linear-gradient(135deg, #e6e8fa 0%, #a9a9a9 100%)"; // Plata
     else bg.style.background = "linear-gradient(135deg, #cd7f32 0%, #8b4513 100%)"; // Bronce
+
+    // Añadir al final de renderCareerDashboard()
+    updateCareerClaimButton();
 }
 
 
