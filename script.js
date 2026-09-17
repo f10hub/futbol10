@@ -589,6 +589,9 @@ const QWERTY_LAYOUT = ["QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM"];
 const players = [];
 const playerStats = {};
 const tierLists = { bronce: [], plata: [], oro: [], diamante: [], platino: [] };
+// VARIABLES PARA LA ANIMACIÓN DE SOBRES
+let cartasSobreActual = [];
+let indiceCartaActual = 0;
 
 // NUEVA FUNCIÓN: Asigna el Tier en base a la media automáticamente
 function calculateTier(rating) {
@@ -2725,41 +2728,94 @@ function openPack(event, type) {
 }
 
 function generatePackCards(amount, packType) {
-    const revealContainer = document.getElementById('reveal-cards-container');
-    revealContainer.innerHTML = "";
     let data = getAlbumData();
     
-    // Seleccionamos la piscina de jugadores según el sobre
+    // 1. Clonamos la piscina de jugadores para poder eliminar cartas extraídas sin romper el juego
     let pool = [];
     if (packType === 'gratis') {
-        pool = players; // El sobre gratis saca de todos los jugadores
+        pool = [...players]; 
     } else {
-        pool = tierLists[packType]; // El sobre específico saca solo de su tier
+        pool = [...tierLists[packType]]; 
     }
 
-    // Por seguridad, si el sobre está vacío, salimos
     if (!pool || pool.length === 0) return;
-    
-    for(let i=0; i<amount; i++) {
-        let randomPlayer = pool[Math.floor(Math.random() * pool.length)];
-        let tier = getPlayerTier(randomPlayer);
+
+    let jugadoresExtraidos = [];
+
+    // 2. Sacamos cartas asegurando que no se repitan DENTRO del mismo sobre
+    for(let i = 0; i < amount; i++) {
+        if (pool.length === 0) break; // Por si se agota la piscina
+        let randomIndex = Math.floor(Math.random() * pool.length);
         
+        // Splice elimina el jugador de la pool temporal y lo devuelve
+        let randomPlayer = pool.splice(randomIndex, 1)[0]; 
+        jugadoresExtraidos.push(randomPlayer);
+
+        // Lógica de inventario (álbum o repetido)
         if (!data.unlocked.includes(randomPlayer)) {
             data.unlocked.push(randomPlayer);
         } else {
             data.duplicates[randomPlayer] = (data.duplicates[randomPlayer] || 0) + 1;
         }
-
-        const card = document.createElement('div');
-        card.className = `f10-card tier-${tier}`;
-        card.innerHTML = `<img src="players/${randomPlayer}.jpg"><div class="card-name">${randomPlayer}</div>`;
-        revealContainer.appendChild(card);
-        trackDaily('packs', 1);
     }
-    
+
     saveAlbumData(data);
+
+    // 3. ORDENAMOS de peor a mejor media
+    jugadoresExtraidos.sort((a, b) => playerStats[a].rating - playerStats[b].rating);
+
+    // 4. Preparamos el escenario para la animación individual
+    cartasSobreActual = jugadoresExtraidos;
+    indiceCartaActual = 0;
+
     document.getElementById('pack-container').classList.add('hidden');
     document.getElementById('pack-reveal').classList.remove('hidden');
+
+    // Lanzamos la primera carta
+    mostrarSiguienteCartaSobre();
+}
+
+function mostrarSiguienteCartaSobre() {
+    const revealContainer = document.getElementById('reveal-cards-container');
+    revealContainer.innerHTML = ""; // Limpiamos la carta anterior
+
+    if (indiceCartaActual < cartasSobreActual.length) {
+        let playerName = cartasSobreActual[indiceCartaActual];
+        let tier = playerStats[playerName].tier;
+        let rating = playerStats[playerName].rating; // Sacamos su media para mostrarla
+
+        // Creamos la carta
+        const card = document.createElement('div');
+        // Usamos tu clase f10-card y pack-opening-anim para que tiemble al salir
+        card.className = `f10-card tier-${tier} pack-opening-anim`; 
+        card.style.cursor = 'pointer'; // Para que el ratón indique que se puede clicar
+        
+        // Al hacer clic en la carta, se llama a sí misma para sacar la siguiente
+        card.onclick = mostrarSiguienteCartaSobre; 
+
+        // Puedes ajustar el HTML de tu carta aquí (añadí la media al lado del nombre para que se vea el progreso)
+        card.innerHTML = `
+            <img src="players/${playerName}.jpg" alt="${playerName}" loading="lazy">
+            <div class="card-name">${playerName} | ${rating}</div>
+        `;
+
+        // Texto de ayuda parpadeante debajo de la carta
+        const textoAyuda = document.createElement('p');
+        textoAyuda.style.color = '#fff';
+        textoAyuda.style.marginTop = '20px';
+        textoAyuda.style.fontWeight = 'bold';
+        textoAyuda.innerText = (indiceCartaActual === cartasSobreActual.length - 1) 
+            ? "¡Última carta! (Clic para cerrar)" 
+            : "✨ Haz clic en la carta para descubrir la siguiente...";
+
+        revealContainer.appendChild(card);
+        revealContainer.appendChild(textoAyuda);
+
+        indiceCartaActual++;
+    } else {
+        // Cuando ya no quedan cartas, cerramos el sobre
+        closePackReveal();
+    }
 }
 
 function closePackReveal() {
