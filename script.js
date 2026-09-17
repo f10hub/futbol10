@@ -1350,6 +1350,7 @@ function showCategory(category) {
                 <div class="card-bg bg-aforos"></div>
                 <div class="card-info"><h3>Guerra de Aforos</h3><p>Capacidad de Estadios</p></div>
             </div>`;
+        
    } else if (category === 'leyendas') {
         title.innerHTML = "LEYENDAS <span>FÚTBOL</span>";
         grid.innerHTML = `
@@ -1357,10 +1358,16 @@ function showCategory(category) {
                 <div class="card-bg bg-timemachine"></div>
                 <div class="card-info"><h3>Máquina del Tiempo</h3><p>¿En qué año fue?</p></div>
             </div>
-            <div class="menu-card coming-soon">
-                <span class="icon">📈</span>
-                <h3>Higher or Lower</h3><p>Próximamente</p>
+            <div class="menu-card career-game-card" onclick="showGameInfo('career')">
+                <div class="card-bg" style="background-image: url('players/fondo-top10.jpg');"></div>
+                <div class="card-info">
+                    <h3>El Trayecto</h3>
+                    <p>Forja tu Leyenda</p>
+                </div>
             </div>`;
+
+
+        
     } else if (category === 'europeos') {
         title.innerHTML = "JUEGOS <span>EUROPEOS</span>";
         grid.innerHTML = `
@@ -3615,6 +3622,11 @@ const gamesDatabase = {
         title: 'XI HISTÓRICO', color: '#00ff87', 
         desc: 'Adivina los 11 jugadores de esta alineación histórica antes de que se agote el reloj.',
         initFn: () => showGame('eleven')
+    },
+    'career': {
+        title: 'EL TRAYECTO', color: '#00d2ff', 
+        desc: 'Crea a tu jugador desde cero. Gana Tokens de Carrera en otros minijuegos para mejorar sus atributos (Regate, Tiro, Físico) y llevarlo a la élite.',
+        initFn: () => showGame('career')
     }
 };
 
