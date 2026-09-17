@@ -3994,3 +3994,37 @@ function getCareerLogicalDate() {
     
     return now.toLocaleDateString('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit' });
 }
+
+
+function claimDailyCareerTokens() {
+    const logicalToday = getCareerLogicalDate();
+    const lastClaimed = localStorage.getItem('f10_last_career_token');
+
+    if (lastClaimed === logicalToday) {
+        mostrarMensajePro("⏳ PACIENCIA", "Ya has recogido tus tokens de hoy. Vuelve mañana a partir de las 12:00 (hora de España).");
+        return;
+    }
+
+    // Entregamos 2 Tokens de Carrera al usuario
+    addCareerTokens(2);
+    localStorage.setItem('f10_last_career_token', logicalToday);
+    
+    mostrarMensajePro("🎁 ¡TOKENS RECIBIDOS!", "Has recibido +2 🎫 Tokens de Carrera. Úsalos para mejorar tu jugador.");
+    updateCareerClaimButton();
+}
+
+function updateCareerClaimButton() {
+    const logicalToday = getCareerLogicalDate();
+    const lastClaimed = localStorage.getItem('f10_last_career_token');
+    const btn = document.getElementById('btn-claim-career');
+    
+    if (btn) {
+        if (lastClaimed === logicalToday) {
+            btn.innerText = "✅ RECLAMADO (Vuelve a las 12:00)";
+            btn.style.opacity = "0.5";
+        } else {
+            btn.innerText = "🎁 RECLAMAR TOKENS DIARIOS (+2🎫)";
+            btn.style.opacity = "1";
+        }
+    }
+}
