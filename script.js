@@ -293,98 +293,93 @@ const dbEquipos = {
         { name: "ISAAC ROMERO", rating: 74, positions: ["DC"] }
     ],
 
-
-
-
-
-
-
-
-
-
-    
     "RAYO VALLECANO": [
         { name: "BATALLA", rating: 79, positions: ["POR"] },
-        { name: "EMIL AUDERO", rating: 74, positions: ["POR"] },
-        { name: "DANI CARDENAS", rating: 72, positions: ["POR"] },
-        { name: "MUJAID SADICK", rating: 73, positions: ["DFC"] },
-        { name: "KUMBULLA", rating: 74, positions: ["DFC"] },
-        { name: "LUIZ FELIPE", rating: 73, positions: ["DFC"] },
-        { name: "JOZHUA VERTROUWD", rating: 68, positions: ["DFC"] },
+        { name: "EMIL AUDERO", rating: 79, positions: ["POR"] },
+        { name: "DANI CARDENAS", rating: 74, positions: ["POR"] },
+        { name: "MUJAID SADICK", rating: 75, positions: ["DFC"] },
+        { name: "KUMBULLA", rating: 75, positions: ["DFC"] },
+        { name: "LUIZ FELIPE", rating: 75, positions: ["DFC"] },
+        { name: "JOZHUA VERTROUWD", rating: 68, positions: ["DFC", "LI"] },
         { name: "LEJEUNE", rating: 79, positions: ["DFC"] },
-        { name: "PELAYO FERNANDEZ", rating: 65, positions: ["DFC"] },
-        { name: "ADRIA PEDROSA", rating: 75, positions: ["LI"] },
+        { name: "PELAYO FERNANDEZ", rating: 64, positions: ["DFC"] },
+        { name: "ADRIA PEDROSA", rating: 74, positions: ["LI"] },
         { name: "RATIU", rating: 80, positions: ["LD"] },
-        { name: "BALLIU", rating: 75, positions: ["LD", "LI"] },
+        { name: "BALLIU", rating: 74, positions: ["LD", "LI"] },
         { name: "PEDRO DIAZ", rating: 75, positions: ["MC", "MCO"] },
         { name: "UNAI LOPEZ", rating: 76, positions: ["MCD", "MC"] },
         { name: "OSCAR VALENTIN", rating: 77, positions: ["MCD", "MC"] },
         { name: "PATHE CISS", rating: 77, positions: ["MCD", "DFC"] },
         { name: "GNANGORO BOUARE", rating: 60, positions: ["MC"] },
         { name: "NTEKA", rating: 70, positions: ["MCO", "DC"] },
-        { name: "RAYANE BELAID", rating: 65, positions: ["MCO"] },
+        { name: "RAYANE BELAID", rating: 64, positions: ["MCO", "MC"] },
         { name: "TSITAISHVILI", rating: 72, positions: ["EI"] },
         { name: "ALVARO GARCIA", rating: 81, positions: ["EI", "DC"] },
         { name: "JORGE DE FRUTOS", rating: 81, positions: ["ED", "DC"] },
         { name: "FRAN PEREZ", rating: 74, positions: ["ED"] },
         { name: "ISI PALAZON", rating: 80, positions: ["MCO", "DC"] },
         { name: "ALEMAO", rating: 74, positions: ["DC"] },
-        { name: "CAMELLO", rating: 73, positions: ["DC"] },
-        { name: "RAUL DE TOMAS", rating: 75, positions: ["DC"] }
+        { name: "CAMELLO", rating: 74, positions: ["DC"] },
+        { name: "RAUL DE TOMAS", rating: 72, positions: ["DC"] }
     ],
     
     "RACING SANTANDER": [
         { name: "AGIRREZABALA", rating: 76, positions: ["POR"] },
-        { name: "ERIKSSON", rating: 66, positions: ["POR"] },
-        { name: "BELOCIAN", rating: 75, positions: ["DFC"] },
-        { name: "FACUNDO GONZALEZ", rating: 68, positions: ["DFC"] },
-        { name: "PEDRO FELIPE", rating: 68, positions: ["DFC"] },
-        { name: "MANU HERNANDO", rating: 68, positions: ["DFC"] },
-        { name: "PABLO RAMON", rating: 68, positions: ["DFC"] },
-        { name: "JORGE SALINAS", rating: 67, positions: ["LI"] },
-        { name: "AARON MARTIN", rating: 75, positions: ["LI"] },
-        { name: "MANTILLA", rating: 68, positions: ["LD"] },
-        { name: "MATTEO PRATI", rating: 74, positions: ["MCD"] },
-        { name: "MAGUETTE GUEYE", rating: 66, positions: ["MCD", "MC"] },
-        { name: "IVAN MARTIN", rating: 74, positions: ["MC"] },
+        { name: "ERIKSSON", rating: 69, positions: ["POR"] },
+        { name: "BELOCIAN", rating: 71, positions: ["DFC", "LI"] },
+        { name: "FACUNDO GONZALEZ", rating: 69, positions: ["DFC"] },
+        { name: "PEDRO FELIPE", rating: 69, positions: ["DFC"] },
+        { name: "MANU HERNANDO", rating: 69, positions: ["DFC"] },
+        { name: "PABLO RAMON", rating: 69, positions: ["DFC"] },
+        { name: "JORGE SALINAS", rating: 72, positions: ["LI"] },
+        { name: "AARON MARTIN", rating: 74, positions: ["LI"] },
+        { name: "MANTILLA", rating: 71, positions: ["LD"] },
+        { name: "MATTEO PRATI", rating: 72, positions: ["MCD", "MC"] },
+        { name: "MAGUETTE GUEYE", rating: 69, positions: ["MCD", "MC"] },
+        { name: "IVAN MARTIN", rating: 77, positions: ["MC", "MCO", "MCD"] },
         { name: "IÑIGO SAINZ", rating: 67, positions: ["MC", "MCD"] },
-        { name: "ANDRE ALMEIDA", rating: 75, positions: ["MCO"] },
-        { name: "CANALES", rating: 81, positions: ["MC", "MCO"] },
+        { name: "ANDRE ALMEIDA", rating: 74, positions: ["MCO", "DC", "MC"] },
+        { name: "CANALES", rating: 78, positions: ["MC", "MCO"] },
         { name: "IÑIGO VICENTE", rating: 77, positions: ["EI", "MCO"] },
-        { name: "GULIASHVILI", rating: 72, positions: ["EI"] },
         { name: "ANDRES MARTIN", rating: 77, positions: ["ED"] },
-        { name: "PABLO GARCIA", rating: 74, positions: ["ED"] },
-        { name: "IKER LUQUE", rating: 68, positions: ["ED"] },
-        { name: "YASSIR ZABIRI", rating: 75, positions: ["DC"] },
+        { name: "PABLO GARCIA", rating: 70, positions: ["ED", "EI"] },
+        { name: "IKER LUQUE", rating: 64, positions: ["ED"] },
+        { name: "YASSIR ZABIRI", rating: 66, positions: ["DC"] },
         { name: "VILLALIBRE", rating: 74, positions: ["DC"] },
-        { name: "ARANA", rating: 69, positions: ["DC"] }
+        { name: "GULIASHVILI", rating: 69, positions: ["DC"] },
+        { name: "ARANA", rating: 70, positions: ["DC"] }
     ],
     
     "GETAFE": [
         { name: "DAVID SORIA", rating: 80, positions: ["POR"] },
-        { name: "JIRI LETACEK", rating: 72, positions: ["POR"] },
+        { name: "JIRI LETACEK", rating: 69, positions: ["POR"] },
         { name: "ABDEL ABQAR", rating: 74, positions: ["DFC"] },
-        { name: "ZAID ROMERO", rating: 73, positions: ["DFC"] },
-        { name: "BOSELLI", rating: 72, positions: ["DFC", "LD"] },
+        { name: "ZAID ROMERO", rating: 77, positions: ["DFC", "LI"] },
+        { name: "BOSELLI", rating: 74, positions: ["DFC", "LD"] },
         { name: "DJENE", rating: 77, positions: ["DFC", "LD", "MCD"] },
-        { name: "SABA SAZONOV", rating: 68, positions: ["DFC"] },
-        { name: "JEAN IVES VALOU", rating: 65, positions: ["DFC"] },
-        { name: "JOHAN MOJICA", rating: 74, positions: ["LI"] },
-        { name: "DAVINCHI", rating: 65, positions: ["LI"] },
-        { name: "ANDRES GARCIA", rating: 74, positions: ["LD"] },
-        { name: "KIKO FEMENIA", rating: 74, positions: ["LD"] },
-        { name: "MARIO MARTIN", rating: 74, positions: ["MC", "MCD"] },
-        { name: "OREL MANGALA", rating: 78, positions: ["MCD"] },
+        { name: "SABA SAZONOV", rating: 70, positions: ["DFC"] },
+        { name: "JEAN YVES VALOU", rating: 66, positions: ["DFC", "LI"] },
+        { name: "JOHAN MOJICA", rating: 76, positions: ["LI"] },
+        { name: "DAVINCHI", rating: 69, positions: ["LI"] },
+        { name: "ANDRES GARCIA", rating: 73, positions: ["LD"] },
+        { name: "KIKO FEMENIA", rating: 74, positions: ["LD", "MCD"] },
+        { name: "MARIO MARTIN", rating: 74, positions: ["MC", "MCD", "MCO"] },
+        { name: "OREL MANGALA", rating: 75, positions: ["MCD", "MC"] },
         { name: "NEMANJA GUDELJ", rating: 75, positions: ["MCD"] },
-        { name: "RAMON TERRATS", rating: 73, positions: ["MC"] },
-        { name: "FRANCHO SERRANO", rating: 72, positions: ["MC"] },
-        { name: "JUANMI", rating: 72, positions: ["EI", "DC"] },
-        { name: "UCHE", rating: 76, positions: ["DC", "MCO"] },
-        { name: "SATRIANO", rating: 75, positions: ["EI", "DC", "MCO"] },
-        { name: "ENES UNAL", rating: 78, positions: ["DC"] },
-        { name: "BORJA MAYORAL", rating: 77, positions: ["DC"] },
-        { name: "IVAN AZON", rating: 74, positions: ["DC"] }
+        { name: "RAMON TERRATS", rating: 74, positions: ["MC"] },
+        { name: "FRANCHO SERRANO", rating: 72, positions: ["MC", "MCO"] },
+        { name: "JUANMI", rating: 71, positions: ["EI", "DC"] },
+        { name: "UCHE", rating: 75, positions: ["DC", "MCO"] },
+        { name: "SATRIANO", rating: 77, positions: ["EI", "DC"] },
+        { name: "ENES UNAL", rating: 75, positions: ["DC"] },
+        { name: "BORJA MAYORAL", rating: 76, positions: ["DC"] },
+        { name: "IVAN AZON", rating: 70, positions: ["DC"] }
     ],
+
+
+
+
+
     
     "LEVANTE": [
         { name: "MATHEW RYAN", rating: 76, positions: ["POR"] },
