@@ -2883,6 +2883,7 @@ function updatePacksProgress() {
         const cartasReales = data.unlocked.filter(p => players.includes(p)).length;
         progGratis.innerText = `${cartasReales}/${players.length}`;
     }
+}
     
 function populateTeamFilter() {
     const select = document.getElementById('filter-team');
