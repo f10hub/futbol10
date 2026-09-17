@@ -1,3 +1,24 @@
+const CURRENT_VERSION = "2.0";
+
+if (localStorage.getItem('f10_version') !== CURRENT_VERSION) {
+    // Busca y elimina solo las partidas de FUTBOL10
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('f10_')) {
+            keysToRemove.push(key);
+        }
+    }
+    
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+    
+    // Guarda la nueva versión para que no se borre en bucle
+    localStorage.setItem('f10_version', CURRENT_VERSION);
+}
+
+
+
+
 const removeAccents = (str) => {
     return str.replace(/[ÁÀÄÂ]/gi, 'A')
               .replace(/[ÉÈËÊ]/gi, 'E')
