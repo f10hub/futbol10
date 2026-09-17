@@ -2709,22 +2709,35 @@ function openFreePack(event) {
     }
 
     localStorage.setItem('f10_last_free_pack', today);
-    // El sobre gratis da 2 jugadores aleatorios de cualquier nivel (o cámbialo a 'bronce' si quieres que sea solo bronce)
-    generatePackCards(2, 'gratis'); 
+    // El sobre gratis da 4 jugadores aleatorios de cualquier nivel (o cámbialo a 'bronce' si quieres que sea solo bronce)
+    generatePackCards(5, 'gratis'); 
 }
 
-function openPack(event, type) {
-    const prices = { bronce: 25, plata: 50, oro: 100, diamante: 200, platino: 400 };
-    const cost = prices[type];
+function openPack(event, type) { 
+    const prices = { bronce: 25, plata: 50, oro: 100, diamante: 200, platino: 400 }; 
+    const cost = prices[type]; 
     
-    if (getCoins() < cost) {
-        mostrarMensajePro("⚠️ SIN MONEDAS", `Necesitas ${cost} 🪙 para abrir este sobre.`);
-        return;
+    if (getCoins() < cost) { 
+        mostrarMensajePro("⚠️ SIN MONEDAS", `Necesitas ${cost} 🪙 para abrir este sobre.`); 
+        return; 
+    } 
+    
+    addCoins(-cost); 
+    document.getElementById('album-coins').innerText = getCoins(); 
+
+    // Asignamos la cantidad de cartas según el tipo de sobre
+    let cantidadCartas = 3; // Por defecto
+    
+    if (type === 'bronce' || type === 'plata') {
+        cantidadCartas = 3;
+    } else if (type === 'oro' || type === 'diamante') {
+        cantidadCartas = 2;
+    } else if (type === 'platino') {
+        cantidadCartas = 1;
     }
-    
-    addCoins(-cost);
-    document.getElementById('album-coins').innerText = getCoins();
-    generatePackCards(3, type); // Le pasamos el 'type' para que sepa qué sobre abres
+
+    // Pasamos la cantidad dinámica a la función que genera las cartas
+    generatePackCards(cantidadCartas, type); 
 }
 
 function generatePackCards(amount, packType) {
