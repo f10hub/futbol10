@@ -1210,7 +1210,7 @@ let currentLineupSlot = -1;
 let tournamentState = {
     active: false,
     roundIndex: 0,
-    rounds: ['CUARTOS DE FINAL', 'SEMIFINALES', 'GRAN FINAL'],
+    rounds: ['OCTAVOS DE FINAL','CUARTOS DE FINAL', 'SEMIFINALES', 'FINAL'],
     facedTeams: [] // Array para guardar a quién hemos eliminado
 };
 
