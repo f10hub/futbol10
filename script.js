@@ -3533,29 +3533,33 @@ function endSimulatedMatch() {
     const btn = document.getElementById('match-close-btn');
     
     if (matchState.myGoals > matchState.cpuGoals) {
-        if (tournamentState.roundIndex === 3) { // Ganó la final
-            logEvent("🏆 ¡CAMPEÓN DEL TORNEO! Has ganado +150 FutCoins 🪙", "#00ff87");
-            addCoins(150);
-            // NUEVO: Sumar el torneo y checkear la SuperCoin
+        if (tournamentState.roundIndex === 3) { // Ganó la final (Ronda 4)
+            logEvent("🏆 ¡CAMPEÓN DEL TORNEO! Has ganado +200 FutCoins 🪙", "#00ff87");
+            addCoins(200);
+            // Sumar el torneo y checkear la SuperCoin
             let won = addTournamentWon();
             logEvent(`🏆 Torneos en tu palmarés: ${won}`, "#ffd700");
             if (won % 10 === 0) logEvent("💎 ¡HAS GANADO UNA SUPERCOIN! (x10 Torneos)", "#00ffff");
-            // FIN NUEVO
+            
             tournamentState.active = false;
             btn.innerText = "RECLAMAR Y SALIR";
         } else {
+            // Avanza a la siguiente ronda leyendo del array actualizado
             logEvent(`✅ ¡VICTORIA! Avanzas a ${tournamentState.rounds[tournamentState.roundIndex + 1]}`, "#00ff87");
             btn.innerText = "JUGAR SIGUIENTE RONDA";
         }
     } else { // Derrota
         if (tournamentState.roundIndex === 0) {
-            logEvent("❌ Eliminado en Cuartos. Pierdes tu inscripción.", "#ff4d4d");
+            logEvent("❌ Eliminado en Octavos. Pierdes tu inscripción.", "#ff4d4d");
         } else if (tournamentState.roundIndex === 1) {
-            logEvent("🥉 Eliminado en Semifinales. Ganas +75 FutCoins 🪙", "#ff4d4d");
+            logEvent("❌ Eliminado en Cuartos. Ganas +75 FutCoins 🪙", "#ff4d4d");
             addCoins(75);
         } else if (tournamentState.roundIndex === 2) {
-            logEvent("🥈 Subcampeón del torneo. Ganas +100 FutCoins 🪙", "#c0c0c0");
+            logEvent("🥉 Eliminado en Semifinales. Ganas +100 FutCoins 🪙", "#ff4d4d");
             addCoins(100);
+        } else if (tournamentState.roundIndex === 3) {
+            logEvent("🥈 Subcampeón del torneo. Ganas +125 FutCoins 🪙", "#c0c0c0");
+            addCoins(125);
         }
         tournamentState.active = false;
         btn.innerText = "FINALIZAR TORNEO";
